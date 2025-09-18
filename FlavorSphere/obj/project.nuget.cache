@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/hS05Q5hNZc=",
+  "success": true,
+  "projectFilePath": "/Users/eduardorellana/Documents/cse325-team08-project/FlavorSphere/FlavorSphere.csproj",
+  "expectedPackageFiles": [
+    "/Users/eduardorellana/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.0-preview.5.25277.114/microsoft.aspnetcore.app.internal.assets.10.0.0-preview.5.25277.114.nupkg.sha512"
+  ],
+  "logs": []
+}
