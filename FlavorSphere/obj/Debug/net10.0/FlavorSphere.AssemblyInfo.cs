@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlavorSphere")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a30c0a70509cc4a2b2edfc5b11ebc771aa3691c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+093ece476960197585ecf8357c0378e5d6d0d4e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlavorSphere")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlavorSphere")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
