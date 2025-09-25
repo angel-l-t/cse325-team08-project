@@ -487,3 +487,6 @@ $RECYCLE.BIN/
 
 bin/
 obj/
+
+*.db-shm
+*.db-wal
