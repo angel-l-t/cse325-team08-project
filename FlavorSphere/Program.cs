@@ -10,6 +10,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddHttpClient();
 builder.Services.AddSqlite<RecipeContext>("Data Source=recipes.db");
+builder.Services.AddScoped<RecipeService>();
 
 
 var app = builder.Build();
