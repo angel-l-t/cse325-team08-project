@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using FlavorSphere.Model;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace FlavorSphere.Data
 {
-    public class RecipeContext : DbContext
+    public class RecipeContext : IdentityDbContext
     {
         public RecipeContext(DbContextOptions options) : base(options) { }
 
@@ -13,6 +14,9 @@ namespace FlavorSphere.Data
         // Configuración de relaciones entre Recipe e Ingredient
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // This line is to run the Identity configurations first (authentication and authorization)
+            base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<Recipe>()
                 .HasMany(r => r.Ingredients)
                 .WithMany(i => i.Recipes)
