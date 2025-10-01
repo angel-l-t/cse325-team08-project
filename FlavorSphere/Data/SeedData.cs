@@ -6,6 +6,12 @@ namespace FlavorSphere.Data
     {
         public static void Initialize(RecipeContext db)
         {
+            // Checking if there are any recipes already in the database to avoid duplicates.
+            if (db.Recipes.Any())
+            {
+                return; // If yes, do nothing and exit the method.
+            }
+
             var recipes = new Recipe[]
             {
                 new Recipe
