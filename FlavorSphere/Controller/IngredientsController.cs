@@ -5,7 +5,7 @@ using FlavorSphere.Model;
 
 namespace FlavorSphere.Controllers;
 
-[Route("ingredients")]
+[Route("ingredientsData")]
 [ApiController]
 public class IngredientsController : ControllerBase
 {

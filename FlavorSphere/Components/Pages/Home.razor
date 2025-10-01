@@ -16,8 +16,8 @@ Welcome to your new app.
 
     protected override async Task OnInitializedAsync()
     {
-        recipes = await HttpClient.GetFromJsonAsync<List<Recipe>>(NavigationManager.BaseUri + "recipes") ?? new List<Recipe>();
-        ingredients = await HttpClient.GetFromJsonAsync<List<Ingredient>>(NavigationManager.BaseUri + "ingredients") ?? new
+        recipes = await HttpClient.GetFromJsonAsync<List<Recipe>>(NavigationManager.BaseUri + "recipesData") ?? new List<Recipe>();
+        ingredients = await HttpClient.GetFromJsonAsync<List<Ingredient>>(NavigationManager.BaseUri + "ingredientsData") ?? new
         List<Ingredient>();
     }
 
