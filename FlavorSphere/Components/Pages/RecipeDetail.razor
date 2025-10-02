@@ -1,0 +1,59 @@
+@page "/recipe/{RecipeId}"
+@using FlavorSphere.Data
+@inject RecipeService RecipeService
+
+@if (recipe != null)
+{
+    <div class="page-container recipe-detail-page">
+        <main class="content-area">
+            <div class="back-link">
+                <a href="/">&larr; Back to Browse</a>
+            </div>
+
+            <div class="recipe-main-content">
+                <div class="recipe-image-container">
+                    <img src="@recipe.ImageUrl" alt="@recipe.Name" />
+                </div>
+                <div class="ingredients-container">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        @foreach (var ingredient in recipe.Ingredients)
+                        {
+                            <li>@ingredient.Name</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <section class="recipe-header">
+                <h1>@recipe.Name</h1>
+                @* ... (Add more dynamics here) ... *@
+            </section>
+
+            <section class="instructions-section">
+                <h3>Instructions</h3>
+                <p>@recipe.Instructions</p>
+            </section>
+        </main>
+    </div>
+}
+else
+{
+    <p>Loading recipe details...</p>
+}
+
+
+@code {
+    [Parameter]
+    public string RecipeId { get; set; }
+
+    private Recipe? recipe;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (int.TryParse(RecipeId, out int id))
+        {
+            recipe = await RecipeService.GetRecipeByIdAsync(id);
+        }
+    }
+}

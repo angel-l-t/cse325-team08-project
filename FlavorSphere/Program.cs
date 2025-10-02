@@ -14,6 +14,7 @@ builder.Services.AddRazorComponents()
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 builder.Services.AddSqlite<RecipeContext>("Data Source=recipes.db");
+builder.Services.AddScoped<RecipeService>();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<RecipeContext>()
     .AddDefaultTokenProviders();

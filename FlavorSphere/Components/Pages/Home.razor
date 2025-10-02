@@ -1,24 +1,45 @@
 ﻿@page "/"
-@using FlavorSphere.Model
-@inject HttpClient HttpClient
-@inject NavigationManager NavigationManager
+@using FlavorSphere.Data
+@inject RecipeService RecipeService
 
-<PageTitle>Home</PageTitle>
+<div class="page-container">
 
-<h1>Hello, world!</h1>
+    <main class="content-area">
 
-Welcome to your new app.
+        <section class="recipe-grid">
+            @if (allRecipes.Any())
+            {
+                @foreach (var recipe in allRecipes)
+                {
+                    <a href="@($"recipe/{recipe.Id}")" class="recipe-card-link">
+                        <div class="recipe-card">
+                            <img src="@recipe.ImageUrl" alt="@recipe.Name" />
+                            <div class="card-body">
+                                <h4>@recipe.Name</h4>
+                                <div class="recipe-meta">
+                                    <span>🕒 @(recipe.PreparationTime + recipe.CookingTime) min</span>
+                                    <span>⭐ 4.5</span>
+                                </div>
+                                <span class="badge badge-info">@recipe.MealType</span>
+                                <p class="author">By Chef Maria</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+            else
+            {
+                <p>Loading recipes...</p>
+            }
+        </section>
+    </main>
+</div>
 
 @code {
-
-    List<Recipe> recipes = new List<Recipe>();
-    List<Ingredient> ingredients = new List<Ingredient>();
+    private List<Recipe> allRecipes = new List<Recipe>();
 
     protected override async Task OnInitializedAsync()
     {
-        recipes = await HttpClient.GetFromJsonAsync<List<Recipe>>(NavigationManager.BaseUri + "recipes") ?? new List<Recipe>();
-        ingredients = await HttpClient.GetFromJsonAsync<List<Ingredient>>(NavigationManager.BaseUri + "ingredients") ?? new
-        List<Ingredient>();
+        allRecipes = await RecipeService.GetAllRecipesAsync();
     }
-
 }
