@@ -6,34 +6,47 @@
 {
     <div class="page-container recipe-detail-page">
         <main class="content-area">
+            <!-- Back link -->
             <div class="back-link">
                 <a href="/">&larr; Back to Browse</a>
             </div>
 
             <div class="recipe-main-content">
+                <!-- Recipe Image -->
                 <div class="recipe-image-container">
                     <img src="@recipe.ImageUrl" alt="@recipe.Name" />
                 </div>
-                <div class="ingredients-container">
-                    <h3>Ingredients</h3>
-                    <ul>
-                        @foreach (var ingredient in recipe.Ingredients)
-                        {
-                            <li>@ingredient.Name</li>
-                        }
-                    </ul>
+
+                <!-- Recipe Info: title, badges, ingredients, instructions -->
+                <div class="recipe-info-container">
+                    <!-- Recipe Header & Badges -->
+                    <section class="recipe-header">
+                        <h1>@recipe.Name</h1>
+                        <div class="recipe-badges">
+                            <span class="badge">Prep: @recipe.PreparationTime min</span>
+                            <span class="badge">Cook: @recipe.CookingTime min</span>
+                            <span class="badge">Servings: @recipe.Servings</span>
+                        </div>
+                    </section>
+
+                    <!-- Ingredients -->
+                    <div class="ingredients-container">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            @foreach (var ingredient in recipe.Ingredients)
+                            {
+                                <li>@ingredient.Name</li>
+                            }
+                        </ul>
+                    </div>
+
+                    <!-- Instructions -->
+                    <section class="instructions-section">
+                        <h3>Instructions</h3>
+                        <p>@recipe.Instructions</p>
+                    </section>
                 </div>
             </div>
-
-            <section class="recipe-header">
-                <h1>@recipe.Name</h1>
-                @* ... (Add more dynamics here) ... *@
-            </section>
-
-            <section class="instructions-section">
-                <h3>Instructions</h3>
-                <p>@recipe.Instructions</p>
-            </section>
         </main>
     </div>
 }
@@ -41,7 +54,6 @@ else
 {
     <p>Loading recipe details...</p>
 }
-
 
 @code {
     [Parameter]

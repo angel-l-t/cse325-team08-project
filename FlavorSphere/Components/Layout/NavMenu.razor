@@ -1,30 +1,48 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">FlavorSphere</a>
-    </div>
+﻿<div class="container-fluid header-container">
+    <a class="home-link" href="">
+        <!-- Chef hat SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" 
+            width="50" height="50" viewBox="0 0 24 24" 
+            fill="none" stroke="currentColor" stroke-width="2" 
+            stroke-linecap="round" stroke-linejoin="round" 
+            class="chef-hat-logo" aria-hidden="true">
+            <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 
+                    5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"></path>
+            <path d="M6 17h12"></path>
+        </svg>
+
+        <!-- Site title -->
+        <h1>FlavorSphere</h1>
+    </a>
+
+    <!-- Login/Register buttons -->
+        <div class="header-buttons">
+            <a class="btn btn-login" href="/Identity/Account/Login">Login</a>
+            <a class="btn btn-register" href="/Identity/Account/Register">Register</a>
+        </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+<!-- <input type="checkbox" title="Navigation menu" class="navbar-toggler" /> -->
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="nav flex-column">
-        <div class="nav-item px-3">
+        <!-- <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
             </NavLink>
-        </div>
+        </div> -->
 
-        <div class="nav-item px-3">
+        <!-- <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
             </NavLink>
-        </div>
+        </div> -->
 
-        <div class="nav-item px-3">
+        <!-- <div class="nav-item px-3">
             <NavLink class="nav-link" href="weather">
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
             </NavLink>
-        </div>
+        </div> -->
     </nav>
 </div>
 
